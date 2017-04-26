@@ -196,6 +196,8 @@ ELSEIF (WIN32)
     ENDIF (MINGW)
 ELSEIF (CMAKE_SYSTEM_NAME MATCHES "^(Linux|kFreeBSD|GNU|SunOS)$")
     set(PLATFORM_LIBRARIES rt)
+    set(BINDIR ${CMAKE_INSTALL_PREFIX}/bin CACHE PATH "BINDIR")
+    set(MANDIR ${CMAKE_INSTALL_PREFIX}/share/man CACHE PATH "MANDIR")
 ENDIF (APPLE)
 
 # MINGW: GCC does not support codecvt, so use iconv instead
@@ -291,11 +293,11 @@ endif()
 if(UNIX)
     if(ENABLE_SDL2)
         install(FILES "${CMAKE_SOURCE_DIR}/dist/citra.6"
-                DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man6")
+                DESTINATION "${MANDIR}/man6")
     endif()
 
     if (ENABLE_QT)
         install(FILES "${CMAKE_SOURCE_DIR}/dist/citra-qt.6"
-                DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man/man6")
+                DESTINATION "${MANDIR}/man6")
     endif()
 endif()

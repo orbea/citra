@@ -26,7 +26,7 @@ endif()
 target_link_libraries(citra ${PLATFORM_LIBRARIES} Threads::Threads)
 
 if(UNIX AND NOT APPLE)
-    install(TARGETS citra RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+    install(TARGETS citra RUNTIME DESTINATION "${BINDIR}")
 endif()
 
 if (MSVC)

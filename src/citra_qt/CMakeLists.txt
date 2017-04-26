@@ -102,7 +102,7 @@ target_link_libraries(citra-qt ${OPENGL_gl_LIBRARY} ${CITRA_QT_LIBS})
 target_link_libraries(citra-qt ${PLATFORM_LIBRARIES} Threads::Threads)
 
 if(UNIX AND NOT APPLE)
-    install(TARGETS citra-qt RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+    install(TARGETS citra-qt RUNTIME DESTINATION "${BINDIR}")
 endif()
 
 if (MSVC)
